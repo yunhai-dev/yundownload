@@ -28,6 +28,7 @@ class SFTPProtocolHandler(BaseProtocolHandler):
         return uri.lower().startswith("sftp://")
 
     def download(self, resources: "Resources"):
+        super().download(resources)
         return self._download(resources)
 
     def _download(self, resources: "Resources"):

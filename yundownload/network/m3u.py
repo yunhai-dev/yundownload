@@ -27,6 +27,7 @@ class M3U8ProtocolHandler(BaseProtocolHandler):
         return parse.scheme in {'http', 'https'} and parse.path.endswith('.m3u8')
 
     def download(self, resources: 'Resources') -> 'Result':
+        super().download(resources)
         return asyncio.run(self.download_segments(resources))
 
     async def download_segments(self, resources: 'Resources') -> 'Result':

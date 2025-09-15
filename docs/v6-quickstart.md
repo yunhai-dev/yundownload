@@ -19,27 +19,30 @@ pip install yundownload --upgrade
 ## 快速使用
 
 ```python
-from yundownload import Downloader, Resources
+from yundownload import Downloader, Resources, WorkerFuture
 
 if __name__ == '__main__':
     with Downloader() as d:
-        r1 = d.submit(Resources(
+        r1: WorkerFuture = d.submit(Resources(
             uri="https://hf-mirror.com/cognitivecomputations/DeepSeek-R1-AWQ/resolve/main/model-00074-of-00074.safetensors?download=true",
             save_path="DeepSeek-R1-AWQ/model-00074-of-00074.safetensors"
         ))
         r2 = d.submit(Resources(
-            uri='ftp://ftpuser:password@127.0.0.1/data/spider_temp/0f03dc87-57ec-4278-bf95-15d4a1ad90d3.zip',
+            uri='ftp://yunhai:admin123@192.168.6.99/data/spider_temp/0f03dc87-57ec-4278-bf95-15d4a1ad90d3.zip',
             save_path='0f03dc87-57ec-4278-bf95-15d4a1ad90d3.zip'
         ))
         r3 = d.submit(Resources(
-            uri='sftp://root:password@127.0.0.1/root/quick_start.sh',
+            uri='sftp://root:20020308@192.168.6.99/root/quick_start.sh',
             save_path='quick_start.sh'
         ))
         r4 = d.submit(Resources(
             uri='https://c1.7bbffvip.com/video/xiantaiyoushu/%E7%AC%AC01%E9%9B%86/index.m3u8',
-            save_path='./video/download.mp4'
+            save_path='./video/download.mp4',
+            metadata={'test': 'test'}
         ))
-    print(r1.result(), r2.result(), r3.result(), r4.result())
+    print(r1.wait(), r2.wait(), r3.wait(), r4.wait())
+    print(r1.state.is_success())
+    print(r1.resources.uri)
 ```
 
 如你所见，该版本可以支持 `http`、`sftp`、`ftp` 以及 `m3u8` 视频的下载

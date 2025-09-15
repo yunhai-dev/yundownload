@@ -36,11 +36,11 @@ $ pip install yundownload
 现在，让我们开始第一个示例：
 
 ```python
-from yundownload import Downloader, Resources
+from yundownload import Downloader, Resources, WorkerFuture
 
 if __name__ == '__main__':
     with Downloader() as d:
-        r1 = d.submit(Resources(
+        r1: WorkerFuture = d.submit(Resources(
             uri="https://hf-mirror.com/cognitivecomputations/DeepSeek-R1-AWQ/resolve/main/model-00074-of-00074.safetensors?download=true",
             save_path="DeepSeek-R1-AWQ/model-00074-of-00074.safetensors"
         ))
@@ -57,7 +57,9 @@ if __name__ == '__main__':
             save_path='./video/download.mp4',
             metadata={'test': 'test'}
         ))
-    print(r1.result(), r2.result(), r3.result(), r4.result())
+    print(r1.wait(), r2.wait(), r3.wait(), r4.wait())
+    print(r1.state.is_success())
+    print(r1.resources.uri)
 ```
 
 > 命令行在当前版本 `0.6.0-beta.2` 支持最简单的下载，将在后续根据情况完善
