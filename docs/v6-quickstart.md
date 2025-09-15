@@ -19,8 +19,7 @@ pip install yundownload --upgrade
 ## 快速使用
 
 ```python
-from yundownload import Downloader, Resources
-from yundownload.utils import WorkerFuture 
+from yundownload import Downloader, Resources, WorkerFuture
 
 if __name__ == '__main__':
     with Downloader() as d:
