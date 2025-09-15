@@ -22,6 +22,7 @@ class FTPProtocolHandler(BaseProtocolHandler):
         return uri.lower().startswith("ftp://")
 
     def download(self, resources: "Resources"):
+        super().download(resources)
         return self._download(resources)
 
     def _download(self, resources: "Resources"):

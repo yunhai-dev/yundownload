@@ -27,6 +27,7 @@ class HttpProtocolHandler(BaseProtocolHandler):
         self.sliced_chunk_size = None
 
     def download(self, resources: 'Resources'):
+        super().download(resources)
         self._slice_threshold = resources.http_slice_threshold
         self._method = resources.http_method
         self.sliced_chunk_size = resources.http_sliced_chunk_size
