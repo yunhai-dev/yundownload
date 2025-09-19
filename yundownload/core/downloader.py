@@ -1,3 +1,4 @@
+import sys
 from concurrent.futures import ProcessPoolExecutor, Future
 from typing import TYPE_CHECKING, Type
 
@@ -128,7 +129,8 @@ class Downloader:
                             "and implement its required methods")
 
     def close(self):
-        self._download_pool.shutdown()
+        self._download_pool.shutdown(wait=False, cancel_futures=True)
+        sys.exit(0)
 
     def __enter__(self):
         return self
