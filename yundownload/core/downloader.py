@@ -38,7 +38,7 @@ class DownloadProcessPoolExecutor(ProcessPoolExecutor):
 
     def run_download(self, protocol: Type['BaseProtocolHandler'], resources: 'Resources') -> 'Future[Result]':
         """
-        提交下载任务
+        Submit the download task
 
         :param protocol: Protocol Matcher
         :param resources: Resource Object
@@ -64,7 +64,7 @@ class Downloader:
 
     def submit(self, resources: 'Resources') -> 'WorkerFuture':
         """
-        提交任务
+        Submit the task
 
         :param resources: Resource Object
         :return:

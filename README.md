@@ -5,7 +5,7 @@
 
 # Intro
 
-[Official documentation](https://2214372851.github.io/yundownload/)
+[Official documentation](https://yunhai-dev.github.io/yundownload/)
 > This project is a file downloader, supporting dynamic download according to the size of the file to choose the
 > download mode, for the connection that supports breakpoint continuation will automatically break the connection, for
 > the
@@ -18,7 +18,7 @@
 
 # Document
 
-[yundownload GitHub](https://github.com/2214372851/yundownload)
+[yundownload GitHub](https://github.com/yunhai-dev/yundownload)
 
 # Give an example
 
@@ -124,7 +124,7 @@ if __name__ == '__main__':
 - V 0.3.0
     - To optimize the performance of the code, need to pay attention to at the same time, in this version and later
       versions of the API changes, details please refer to
-      the [official documentation](https://2214372851.github.io/yundownload/) description of V0.3 version
+      the [official documentation](https://yunhai-dev.github.io/yundownload/) description of V0.3 version
 - V 0.2.15
     - Big change, remove 'run' function, add 'download' function. See the documentation.
 - V 0.2.14

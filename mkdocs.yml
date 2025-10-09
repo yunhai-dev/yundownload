@@ -1,8 +1,8 @@
 site_name: Yun download
-site_url: https://2214372851.github.io/yundownload/
-repo_url: https://github.com/2214372851/yundownload
+site_url: https://yunhai-dev.github.io/yundownload/
+repo_url: https://github.com/yunhai-dev/yundownload
 copyright: Copyright 2021-2025
-repo_name: 2214372851/yundownload
+repo_name: yunhai-dev/yundownload
 
 nav:
   - 介绍: "index.md"
