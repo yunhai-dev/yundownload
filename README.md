@@ -2,8 +2,14 @@
 ![PyPI - Downloads](https://img.shields.io/pypi/dw/yundownload)
 ![PyPI - License](https://img.shields.io/pypi/l/yundownload)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/yundownload)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/yunhai-dev/yundownload)
 
 # Intro
+You can also check out DeepWiki for tips on using this project. 
+
+[Ask DeepWiki](https://deepwiki.com/yunhai-dev/yundownload)
+
+If you'd like, you can also check out the following documents through the author's guide.
 
 [Official documentation](https://yunhai-dev.github.io/yundownload/)
 > This project is a file downloader, supporting dynamic download according to the size of the file to choose the
